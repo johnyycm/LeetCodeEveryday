@@ -35,4 +35,27 @@ public class StringAndArrayUtil {
 		}
 	}
 	
+	/**
+	 * Rotate an array of n elements to the right by k steps.
+	 * For example, with n = 7 and k = 3, the array [1,2,3,4,5,6,7] is rotated to [5,6,7,1,2,3,4]. 
+	 */
+	public static void rotate(int[]nums, int k){
+		if (nums==null || nums.length==0 || k<0)
+			throw new IllegalArgumentException("Illegal arguments");
+		int length = nums.length;
+		k = k % length;
+		reverse(nums,0,length-k-1);							//reverse first part
+		reverse(nums,length-k, length-1);					//reverse second part
+		reverse(nums, 0 , length-1);						//reverse whole array
+		
+	}
+	public static void reverse(int[] nums, int i , int j){
+		while (i<j){
+			int temp = nums[i];
+			nums[i]=nums[j];
+			nums[j]=temp;
+			i++;
+			j--;
+		}
+	}
 }

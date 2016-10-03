@@ -1,5 +1,7 @@
 package main_class;
 
+import java.util.Arrays;
+
 public class LeetCodeEveryday {
 
 	public static void main(String[] args) {
@@ -8,6 +10,10 @@ public class LeetCodeEveryday {
 		char[] arr = s.toCharArray();
 		StringAndArrayUtil.reverseWords(arr);
 		System.out.println(arr);
+		int [] nums = {1,2,3,4,5,6,7,8,9,10};
+		StringAndArrayUtil.rotate(nums, 4);
+		System.out.println(Arrays.toString(nums));
+		
 	}
 
 }
