@@ -14,6 +14,8 @@ public class LeetCodeEveryday {
 		StringAndArrayUtil.rotate(nums, 4);
 		System.out.println(Arrays.toString(nums));
 		
+		String[] test = {"4", "13", "5", "/", "+"};
+		System.out.println(StringAndArrayUtil.evalRPN(test));
 	}
 
 }

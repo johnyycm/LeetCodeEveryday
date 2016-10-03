@@ -1,5 +1,7 @@
 package main_class;
 
+import java.util.Stack;
+
 /**
  * @author chenmin
  * 
@@ -58,4 +60,45 @@ public class StringAndArrayUtil {
 			j--;
 		}
 	}
+	
+	
+	/**
+	 * Evaluate the value of an arithmetic expression in Reverse Polish Notation.
+	 * Valid operators are +, -, *, /. Each operand may be an integer or another expression.
+	 * ["2", "1", "+", "3", "*"] -> ((2 + 1) * 3) -> 9
+  	 * ["4", "13", "5", "/", "+"] -> (4 + (13 / 5)) -> 6
+	 * @return
+	 */
+	public static int evalRPN(String[] array ){
+		int result=0;
+		String operators = "+-*/";
+		Stack<String> stack = new Stack<>();
+		for (String s : array){
+			if (operators.contains(s)){
+				int a = Integer.valueOf(stack.pop());
+				int b = Integer.valueOf(stack.pop());
+				int index = operators.indexOf(s);
+				switch(index){
+				case 0:
+					stack.push(String.valueOf(a+b));
+					break;
+				case 1:
+					stack.push(String.valueOf(a-b));
+					break;
+				case 2:
+					stack.push(String.valueOf(a*b));
+					break;
+				case 3:
+					String temp = String.valueOf(b/a);
+					stack.push(temp);
+					break;
+				}
+			}else{
+				stack.push(s);
+			}
+		}
+		result = Integer.valueOf(stack.pop());
+		return result;
+	}
+	
 }
