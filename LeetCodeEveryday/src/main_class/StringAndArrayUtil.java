@@ -13,7 +13,6 @@ public class StringAndArrayUtil {
 	 * For example,Given s = "the sky is blue", return "blue is sky the".
 	 */
 	public static void reverseWords(char[] arr){
-//		char[] arr = s.toCharArray();
 		int j = 0;
 		for (int i = 0; i < arr.length;i++){   // reverse each word in string, except last one
 			if (arr[i]==' '){
