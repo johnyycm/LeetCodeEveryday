@@ -16,6 +16,7 @@ public class LeetCodeEveryday {
 		
 		String[] test = {"4", "13", "5", "/", "+"};
 		System.out.println(StringAndArrayUtil.evalRPN(test));
+		System.out.println(StringAndArrayUtil.isIsomorphic("aabbcc", "eeffee"));
 	}
 
 }
